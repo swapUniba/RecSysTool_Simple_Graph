@@ -40,7 +40,7 @@ public class Main {
     /**
      * Inizializzazione del grafo con struttura semplice. 
     
-     SimpleGraph graph=new SimpleGraph(user_column,item_column,context_column,rating_column,num_cont,directed,delimiter, 10,target, threshold);
+     SimpleGraph graph=new SimpleGraph(user_column,item_column,context_column,rating_column,num_cont,directed,delimiter, target, threshold);
    
      /**
      * Visualizzazione del grafo ed esecuzione del PageRank (PageRank con priorità con le 3 funzioni di pesatura
@@ -62,7 +62,7 @@ public class Main {
       * DECOMMENTARE IL METODO run QUI SOTTO PER USARE INTERFACCIA GRAFICA
       */
              
-        run( new NewJFrame(), 1200, 700);
+        run( new GraphicFrame(), 1200, 700);
  
 
    }

@@ -58,12 +58,12 @@ public class SimpleGraph {
     static int column_item=1;
     static int column_context=3;
     static int column_voto=2;
-    static String percorso="data\\rating2.txt";
+    static String percorso="data\\movie.txt";
     static int userid=0;
     ArrayList<String> contestiUtente=new ArrayList<String>();
     ArrayList<String> itemUtente=new ArrayList<String>();
     
-    public SimpleGraph( int user, int item, int context, int rating, int numero_context,boolean direct, String del, int number_events, String targetUser, int soglia_rating) throws IOException {
+    public SimpleGraph( int user, int item, int context, int rating, int numero_context,boolean direct, String del, String targetUser, int soglia_rating) throws IOException {
         
         
         
@@ -77,7 +77,7 @@ public class SimpleGraph {
     layoutvertici = new HashMap<>();
         //Instantiante Graph Oject
     graph = new OrderedSparseMultigraph<>();
-    int num_events = number_events;
+   // int num_events = number_events;
       
 
         Random r=new Random();
@@ -217,7 +217,7 @@ public class SimpleGraph {
 
 
         PageRankWithPriors ranker = new PageRankWithPriors(graph, f, 0.7);
-              ranker.setMaxIterations(10);
+        
         ranker.evaluate();
 
         System.out.println("\n---PageRankWithPriors - Tolerance = " + ranker.getTolerance()+" - Dump factor = " + (1.00d - ranker.getAlpha()+ " - Max iterations = " + ranker.getMaxIterations()));
@@ -318,7 +318,7 @@ public class SimpleGraph {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setTitle("Holistic Recommendation Graph");
+        frame.setTitle("Recommendation Graph");
         frame.setIconImage(new ImageIcon("data/icon.png").getImage());
         frame.setLocationRelativeTo(null);
 

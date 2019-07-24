@@ -174,7 +174,7 @@ public class GraphicPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel14.setText("Number of conditions");
+        jLabel14.setText("Context dimensions");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -200,7 +200,7 @@ public class GraphicPanel extends javax.swing.JPanel {
                     .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel14)
-                        .addGap(0, 191, Short.MAX_VALUE)))
+                        .addGap(0, 201, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -238,7 +238,7 @@ public class GraphicPanel extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(106, 116, 145));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
-        jLabel10.setText("Graph Set Setup");
+        jLabel10.setText("Graph Setup");
 
         jLabel11.setText("Set edge: ");
 
@@ -439,6 +439,7 @@ public class GraphicPanel extends javax.swing.JPanel {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
+    
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -455,16 +456,17 @@ public class GraphicPanel extends javax.swing.JPanel {
          delimiter=jTextField1.getText();
          num_cont=Integer.parseInt(jTextField11.getText());
          
+         
         try {
             if(jToggleButton1.isSelected()){
-                directed=false;
+                directed=true;
             }
             else{
-                directed=true;
+                directed=false;
             }
            
             
-            SimpleGraph graph=new SimpleGraph(user_column,item_column,context_column,rating_column,num_cont,directed,delimiter, 10,target, threshold);
+            SimpleGraph graph=new SimpleGraph(user_column,item_column,context_column,rating_column,num_cont,directed,delimiter,target, threshold);
            // SimpleGraph graph=new SimpleGraph(0,1,3,2,2,true,",", 10,"1065",true, 3);
             graph.Mostra();
             graph.Pagerank(10);      
